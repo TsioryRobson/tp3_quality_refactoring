@@ -1,3 +1,4 @@
+package com.tp3qualityrefactoring;
 import java.util.Scanner;
 
 public class CalculetteSecondDegre {
