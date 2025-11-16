@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - tp3-quality-refactoring
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
