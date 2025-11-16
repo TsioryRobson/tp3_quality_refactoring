@@ -9,5 +9,6 @@ target/
 *.iml
 *.ipr
 
+/out/
 /bin/
 /build/
