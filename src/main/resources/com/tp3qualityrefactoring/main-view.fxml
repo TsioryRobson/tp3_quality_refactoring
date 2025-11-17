@@ -34,9 +34,21 @@
     </GridPane>
 
     <!-- Bouton -->
-    <Button text="Calculer" onAction="#onCalculate"
-            style="-fx-pref-width: 200; -fx-pref-height: 45;
+    <HBox alignment="CENTER" spacing="40">
+        <Button text="Calculer" onAction="#onCalculate"
+                style="-fx-pref-width: 200; -fx-pref-height: 45;
                    -fx-background-color: #4CAF50; -fx-text-fill: white;
-                   -fx-font-size: 16px; -fx-background-radius: 8;"/>
+                   -fx-font-size: 16px; -fx-background-radius: 8;"
+        />
+
+        <Button text="Historique" onAction="#onShowHistory"
+                style="-fx-pref-width: 200; -fx-pref-height: 45;
+                   -fx-background-color: white; -fx-text-fill: black;
+                   -fx-border-color: #4CAF50; -fx-border-width: 1.5;
+                   -fx-border-radius: 8;
+                   -fx-font-size: 16px; -fx-background-radius: 8;"
+        />
+
+    </HBox>
     <Label fx:id="resultLabel" wrapText="true" styleClass="result-label"/>
 </VBox>

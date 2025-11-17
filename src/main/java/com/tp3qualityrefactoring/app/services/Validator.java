@@ -1,15 +1,15 @@
 package com.tp3qualityrefactoring.app.services;
 
-public class Validator {
+public final class Validator {
 
-    public boolean isNumeric(String str) {
-        if (str == null) return false;
-        try {
-            Double.parseDouble(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
+    private Validator() {
     }
 
+    public static double verifyNumeric(String str) {
+        try {
+            return Double.parseDouble(str);
+        } catch (NumberFormatException e) {
+            throw  new NumberFormatException("Erreur: Les valeurs doivent être numériques");
+        }
+    }
 }
