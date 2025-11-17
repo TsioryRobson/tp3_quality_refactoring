@@ -2,7 +2,6 @@ package com.tp3qualityrefactoring.app.ui;
 
 import com.tp3qualityrefactoring.app.services.HistoryManager;
 import com.tp3qualityrefactoring.app.services.Validator;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -48,7 +47,7 @@ public class CalculController {
         }
     }
 
-    public void onShowHistory() throws Exception {
+    public void onShowHistory() throws IOException {
         try {
             String historyContent = historyManager.readHistory();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/tp3qualityrefactoring/history-view.fxml"));
