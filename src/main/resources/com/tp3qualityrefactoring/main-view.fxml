@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tp3qualityrefactoring.app.ui.CalculController"
+      spacing="20" alignment="CENTER"
+      style="-fx-padding: 30; -fx-background-color: #ffffff; -fx-font-family: 'Segoe UI';">
+
+    <!-- Titre -->
+    <Label text="Calculatrice Second Degré"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+    <!-- Zone de saisie -->
+    <GridPane hgap="15" vgap="15" alignment="CENTER">
+
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT"/>
+            <ColumnConstraints halignment="LEFT"/>
+        </columnConstraints>
+
+        <Label text="a :" styleClass="input-label"/>
+        <TextField fx:id="inputA" promptText="Coefficient a" styleClass="input-field"/>
+
+        <Label text="b :" styleClass="input-label" GridPane.rowIndex="1"/>
+        <TextField fx:id="inputB" promptText="Coefficient b" styleClass="input-field" GridPane.rowIndex="1"/>
+
+        <Label text="c :" styleClass="input-label" GridPane.rowIndex="2"/>
+        <TextField fx:id="inputC" promptText="Coefficient c" styleClass="input-field" GridPane.rowIndex="2"/>
+    </GridPane>
+
+    <!-- Bouton -->
+    <HBox alignment="CENTER" spacing="40">
+        <Button text="Calculer" onAction="#onCalculate"
+                style="-fx-pref-width: 200; -fx-pref-height: 45;
+                   -fx-background-color: #4CAF50; -fx-text-fill: white;
+                   -fx-font-size: 16px; -fx-background-radius: 8;"
+        />
+
+        <Button text="Historique" onAction="#onShowHistory"
+                style="-fx-pref-width: 200; -fx-pref-height: 45;
+                   -fx-background-color: white; -fx-text-fill: black;
+                   -fx-border-color: #4CAF50; -fx-border-width: 1.5;
+                   -fx-border-radius: 8;
+                   -fx-font-size: 16px; -fx-background-radius: 8;"
+        />
+
+    </HBox>
+    <Label fx:id="resultLabel" wrapText="true" styleClass="result-label"/>
+</VBox>
