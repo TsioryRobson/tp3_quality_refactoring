@@ -1,19 +1,20 @@
 package com.tp3qualityrefactoring.app.config;
 
+import java.io.IOException;
 import java.util.Properties;
 import java.io.InputStream;
 
 public class ConfigLoader {
-    private Properties properties = new Properties();
+    private final Properties properties = new Properties();
 
-    public ConfigLoader() {
+    public ConfigLoader() throws IOException {
         try (InputStream input = getClass().getResourceAsStream("/com/tp3qualityrefactoring/config.properties")) {
             if (input == null) {
-                throw new RuntimeException("config.properties introuvable dans le classpath !");
+                throw new IllegalStateException("config.properties introuvable dans le classpath !");
             }
             properties.load(input);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            throw new IOException("Erreur lors du chargement de config.properties: "+  e.getMessage());
         }
     }
 
